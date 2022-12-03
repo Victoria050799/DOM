@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="number" id="number">
+  <input type="button"
+  value="Введите ваш возраст"
+  onclick="showNumber()">
+<div class="geometricСalculations"></div>
+  <input type="number" id="a">
+  <input type="number" id="b">
+  <input type="button"
+  value="Результат"
+  onclick="calculateValue()">
+  <input type="button"
+  value="Сброс"
+  onclick="resetResults()">
+
+ <p class="text" id="res"> Вычисления</p>
+ 
+  <p id="result"></p>
+</body>
+<script>
+   function showNumber() {
+    let num =document.querySelector("#number").value;
+    if(num>=18){alert('Вы нам подходите');
+  }
+    else if(num<18){alert('Вы нам не подходите')
+  }
+    else {alert('Введите число')} 
+   ;
+ };
+
+ function calculateValue(){
+  let height = document.querySelector("#a").value;
+  let width = document.querySelector("#b").value;
+  let S= height * width;
+  let P= 2 * (height + width);
+  let D= Math.round(Math.sqrt(Math.pow(height,2)+Math.pow(width,2)));
+  let result1=document.querySelector("#result")
+  console.log()
+  result1.innerHTML="S="+S+";"+ "\nP="+P+";"+"\nD="+D;
+   return result1;
+ 
+ }
+ 
+
+ function resetResults(){
+  document.querySelector("#res").innerHTML="Значение не найдено, повторите попытку. ";
+  document.querySelector("#a").value= " ";
+  document.querySelector("#b").value=" ";
+ }
+
+</script>
+</html>
